@@ -13,7 +13,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
-
+<style>
+    body{
+        scroll-behavior: smooth;
+    }
+</style>
 <body>
     <header class="pt-[35px] pb-[33px] ">
         <div class="max-w-[1180px] mx-auto flex items-center justify-between pr-[20px] pl-[20px]">
@@ -32,7 +36,7 @@
                 <li id="link" class="font-semibold text-base leading-[21px] "> <a href="about.htm">About</a></li>
                 <li id="" class="font-semibold text-base leading-[21px] text-[#1E283280]"> <a href="#">Contact</a></li>
             </ul>
-            <div class="flex items-center gap-[29px]">
+            <div class="flex items-center md:gap-[29px] gap-[15px]">
                 <div class="flex items-center gap-[20px]">
                     <a href="#" class="">
                         <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,8 +159,8 @@
     <section class="bg-[#E6DED8]">
         <div class="max-w-[1180px] md:px-0 px-5 md:py-0 py-5 mx-auto md:flex items-center md:text-start text-center">
             <img src="about/approach/img.png" alt="img" class="md:w-[50%] w-[720px] md:mb-0 mb-5 mx-auto h-[100%]  ">
-            <div class=" w-full h-full pl-[57px]">
-                <p class="font-semibold text-[14px] leading-[19.07px] text-[#000000] ">OUR FACTORIES</p>
+            <div class=" w-full h-full md:pl-[57px] mx-auto">
+                <p class="font-semibold text-[14px] leading-[19.07px] text-[#000000]">OUR FACTORIES</p>
                 <h2 class="font-normal md:text-[50px] text-[40px] md:leading-[68.09px] leading-[48px] text-[#000000] md:mb-5 mb-[12px]">
                     Our ethical approach.
                 </h2>
@@ -199,7 +203,7 @@
         </div>
     </section>
 
-    <section class="pt-[82px] pb-[76px]">
+    <section class="pt-[82px] md:pb-[76px] pb-[50px]">
         <div class="max-w-[1180px] mx-auto px-5 ">
             <h2 class="font-normal text-[34px] leading-[47.6px] text-center text-[#000000] mb-5">
                 More to Explore
@@ -228,7 +232,7 @@
         </div>
     </section>
 
-    <footer class="pt-[90px] pb-[9px]">
+    <footer class="md:pt-[90px] pb-[9px] pt-[50px]">
         <div class="max-w-[1180px] px-5 mx-auto">
           <div class="lg:flex items-center justify-between md:text-left text-center mb-[100px]">
             <div class="lg:mb-0 mb-[40px] md:border-none border-b">
@@ -311,7 +315,7 @@
         <div class="bg-[#1E2832]">
           <div class="lg:flex text-center items-center gap-[135px] py-[14px] px-5 max-w-[1180px] mx-auto  w-full  ">
             <p class="font-normal text-base leading-[21.79px] text-[#FFFFFF] lg:mb-0 mb-[30px]">© 2022 Coral , Inc.</p>
-            <div class=" grid grid-cols-6 justify-center  gap-[8px] lg:mb-0 mb-[20px]">
+            <div class=" grid grid-cols-6 justify-center cursor-pointer gap-[8px] lg:mb-0 mb-[20px]">
               <img src="./img/footer/1.png" alt="">
               <img src="./img/footer/2.png" alt="">
               <img src="./img/footer/3.png" alt="">
