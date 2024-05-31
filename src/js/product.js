@@ -18,6 +18,7 @@ let x = document.querySelector('#X')
 
 x.addEventListener('click', function () {
   eccommerce.classList.toggle("left-0")
+  x.classList.toggle("left-[295px]")
 })
 
 
