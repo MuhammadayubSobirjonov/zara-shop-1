@@ -123,8 +123,8 @@
       <div class="  items-start justify-between ">
         <div class="md:flex items-start  justify-between mb-[25px]">
 
-          <button id="X" class="hover:cursor-pointer absolute md:hidden top-[80px] left-[0px] bg-[white] border-2 p-3 ">X</button>
-          <div id="eccomerce" class="max-w-[295px] fixed md:bg-[#FFFFFF] bg-[white]  border-2 pt-5 h-full transition-all md:left-0 -left-full z-50 top-0  w-[80%]">
+          <button id="X" class="hover:cursor-pointer z-50 fixed md:absolute md:hidden top-[80px] rounded-sm left-[0px] bg-[white] border-2 p-3 ">X</button>
+          <div id="eccomerce" class=" max-w-[295px] md:relative fixed md:bg-[#FFFFFF] bg-[white]  border-2 pt-5 h-full transition-all md:left-0 -left-full z-50 top-0  w-[80%]" style="overflow-y: auto;">
             <div class="max-w-[234px] mx-auto w-full flex items-center justify-between mb-5">
               <p class="font-semibold text-[22px] leading-[22.96px] text-[#807D7E]">
                 Filter
@@ -392,73 +392,73 @@
                 <ul id="color-buttons" class="grid grid-cols-4 justify-center gap-5 py-10">
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class=" w-9 h-9 rounded-xl bg-[#8434E1]"></span>
+                      <span data-color="#8434E1" id="color" class=" w-9 h-9 border-2 rounded-xl bg-[#8434E1]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Purple</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
-                    <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-black"></span>
+                    <button class=" flex flex-col p-1 gap-4 w-full justify-center items-center">
+                      <span data-color="black" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-black"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Black</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#F35528]"></span>
+                      <span data-color="#F35528" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#F35528]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Red</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#F16F2B]"></span>
+                      <span data-color="#F16F2B" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#F16F2B]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Orange</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class="flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#345EFF]"></span>
+                      <span data-color="#345EFF" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#345EFF]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Navy</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-white border"></span>
+                      <span data-color="grey" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-white "></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">White</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#D67E3B]"></span>
+                      <span data-color="#D67E3B" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#D67E3B]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Broom</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#48BC4E]"></span>
+                      <span data-color="#48BC4E" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#48BC4E]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Green</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#FDC761]"></span>
+                      <span data-color="#FDC761" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#FDC761]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Yellow</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#E4E5E8]"></span>
+                      <span data-color="#E4E5E8" id="color" class="  color-span w-9 h-9 border-2 rounded-xl bg-[#E4E5E8]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Grey</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#E08D9D]"></span>
+                      <span data-color="#E08D9D" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#E08D9D]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Pink</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span id="color" class="color-span w-9 h-9 rounded-xl bg-[#3FDEFF]"></span>
+                      <span data-color="#3FDEFF" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#3FDEFF]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Blue</p>
                     </button>
                   </li>

@@ -127,3 +127,18 @@ dresStyle.forEach(function (item, index) {
     dresStyle[index].classList.add("product-size")
   })
 })
+
+let colorss = document.querySelectorAll("#color")
+colorss.forEach(function (item, index) {
+  // item.addEventListener('click' , function (item ,index){
+  //   item[index].classList.remove("data-color")
+  // } )
+  item.addEventListener('click', function () {
+    colorss.forEach(function (item, index) {
+      item.style.backgroundColor = item.getAttribute("data-color")
+      item.style.borderColor = "transparent"
+    })
+    item.style.borderColor = item.getAttribute("data-color")
+    item.style.backgroundColor = "transparent"
+  })
+}) 

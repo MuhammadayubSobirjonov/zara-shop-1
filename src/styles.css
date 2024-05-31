@@ -59,6 +59,13 @@
   padding-bottom: 40px;
 }
 
+.number{
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21.79px;
+  color: #3C4242;
+}
+
 .price-input{
   width: 100%;
   display: flex;
