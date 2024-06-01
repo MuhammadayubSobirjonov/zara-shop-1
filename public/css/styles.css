@@ -525,19 +525,27 @@ video {
     border: none;
 }
 
-.li-border-b{
+.boxed{
+  display: block;
+}
+
+.border-b1{
     border-bottom: 2px solid #000000;
-    padding-bottom: 16px;
-    color: white;
+    color: #000000;
 }
 
 .border1{
     border: 1px solid #3C4242;
-    padding: 45px;
 }
 
 .circle{
     border: 2px solid black;
+    padding: 4px;
+}
+
+.product-size{
+  background-color: #BEBCBD;
+  color: #FFFFFF;
 }
 
 
@@ -559,6 +567,13 @@ video {
   border-radius: 10px;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.number{
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21.79px;
+  color: #3C4242;
 }
 
 .price-input{

@@ -14,8 +14,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body style="scroll-behavior: smooth;">
-  <header class="pt-[26px] pb-[26px] ">
+<style>
+  * {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<body>
+  <div id="bg" class="w-full -right-full top-0 fixed z-0 h-[100vh] md:hidden block">
+  </div>
+  <header id="header" class="pt-[35px] pb-[33px] ">
     <div class="max-w-[1180px] mx-auto flex items-center justify-between pr-[20px] pl-[20px]">
       <a href="index.htm" class="">
         <svg width="126" height="25" viewBox="0 0 126 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,13 +33,15 @@
         </svg>
       </a>
       <ul class="lg:flex items-center gap-[59px] hidden">
-        <li id="" class="font-semibold text-base leading-[21px] text-[#1E283280] "> <a href="index.htm">Home</a></li>
-        <li id="link" class="font-semibold text-base leading-[21px] "> <a href="#">Products</a></li>
+        <li id="" class="font-semibold text-base leading-[21px] text-[#1E283280]"> <a href="index.htm">Home</a></li>
+        <li id="link" class="font-semibold text-base leading-[21px] "> <a href="product.htm">Products</a>
+        </li>
         <li id="" class="font-semibold text-base leading-[21px] text-[#1E283280]"> <a href="about.htm">About</a></li>
         <li id="" class="font-semibold text-base leading-[21px] text-[#1E283280]"> <a href="#">Contact</a></li>
       </ul>
-      <div class="flex items-center gap-[20px]">
-        <div class="flex items-center gap-[20px]">
+      <div class="flex items-center md:gap-[29px] gap-[15px]">
+        <input id="headerInput" class="border hidden w-[60px] rounded-sm" type="text">
+        <div id="headerSearch" class="flex items-center gap-[20px]">
           <a href="#" class="">
             <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="1" y="1" width="47" height="47" rx="20" fill="white" fill-opacity="0.5" />
@@ -42,7 +52,6 @@
           </a>
           <a href="#" class="text-[18px] md:flex hidden font-medium leading-[26px]">
             Search
-            </p>
           </a>
         </div>
         <div class="lg:flex hidden items-center gap-[20px]">
@@ -58,8 +67,8 @@
             </p>
         </div>
         <button
-          class="group pt-[12px] pl-[34px] lg:flex hidden pb-[12px] pr-[34px] hover:bg-[#FFFFFF] hover:border-2 hover:transition-all hover:transition-3s bg-[#1E2832] rounded-[20px]">
-          <a href="#" class=" group-hover:text-[#1E2832] font-semibold text-lg leading-[26px] text-[#FFFFFF]">Get
+          class="group pt-[12px] pl-[34px] lg:flex hidden pb-[12px] pr-[34px] hover:bg-[#FFFFFF] border-2 hover:transition-all  bg-[#1E2832] rounded-[20px]">
+          <a href="#" class="font-semibold text-lg group-hover:text-[#1E2832] leading-[26px] text-[#FFFFFF]">Get
             started</a>
         </button>
         <div class="">
@@ -74,12 +83,12 @@
       </div>
     </div>
     <div id="responsive-menu"
-      class="pt-[30px] pl-[15px] transition-all fixed z-[999] top-0 -right-full w-[80%] h-screen bg-[#323232B2]">
+      class="pt-[30px] px-[15px]  transition-all fixed z-[999] top-0 -right-full w-[80%] h-screen bg-[#323232B2]">
       <div class="flex items-center gap-[30px]">
-        <svg id="close-menu" class="w-[30px] ml-auto ]" xmlns:dc="http://purl.org/dc/elements/1.1/"
-          xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-          xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
-          xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        <svg id="close-menu" class="w-[30px] ml-auto absolute right-[17px] top-[45px]"
+          xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 100 125" version="1.1" x="0px"
           y="0px">
           <g transform="translate(0,-952.36216)">
@@ -87,44 +96,50 @@
               d="m 23.813661,969.30444 -7.070312,7.07031 24.748047,24.75005 -24.748047,24.748 7.070312,7.0703 24.748047,-24.748 24.75,24.748 7.070312,-7.0703 -24.75,-24.748 24.75,-24.75005 -7.070312,-7.07031 -24.75,24.75 -24.748047,-24.75 z" />
           </g>
       </div>
-      <ul class="mb-20">
-        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] text-center mb-[25px]"> <a
+      <ul class="mb-20 mt-[80px]">
+        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] hover:opacity-60 text-center mb-[25px]"> <a
             href="index.htm">Home</a>
         </li>
-        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] text-center mb-[25px]"> <a
+        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] hover:opacity-60 text-center mb-[25px]"> <a
             href="product.htm">Products</a></li>
-        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] text-center mb-[25px]"> <a
+        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] hover:opacity-60 text-center mb-[25px]"> <a
             href="about.htm">About</a>
         </li>
-        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] text-center "> <a href="#">Contact</a>
+        <li class="font-semibold text-base leading-[21px] text-[#FFFFFF] hover:opacity-60 text-center "> <a
+            href="#">Contact</a>
         </li>
       </ul>
       <div
-        class="mb-5 flex items-center gap-[20px] w-full pt-[15px] pl-[21px] pb-[15px] pr-[22px] rounded-2xl justify-center mx-auto bg-[white]">
-        <a href="#" class="">
-          <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        class="mb-5 flex group hover:bg-[#1E2832] items-center gap-[20px] w-full pt-[15px] pl-[21px] pb-[15px] pr-[22px] rounded-2xl justify-center mx-auto bg-[white]">
+        <a href="cart.htm" class="">
+          <svg class="group-hover:text-[#FFF]" width="27" height="27" viewBox="0 0 27 27" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M8.80312 23.625H5.625V10.575L3.57187 5.625H1.125V3.375H5.09063L6.94688 7.875H25.3969L21.375 15.7781C22.3312 15.9281 23.133 16.3687 23.7803 17.1C24.4268 17.8313 24.75 18.6938 24.75 19.6875C24.75 20.775 24.3705 21.7031 23.6115 22.4719C22.8518 23.2406 21.9281 23.625 20.8406 23.625C19.7344 23.625 18.8018 23.2406 18.0427 22.4719C17.283 21.7031 16.9031 20.775 16.9031 19.6875C16.9031 19.3125 16.95 18.9656 17.0437 18.6469C17.1375 18.3281 17.2687 18.0188 17.4375 17.7188L13.7531 17.3812L8.80312 23.625ZM18.9563 15.6094L21.7406 10.125L7.875 10.1531L9.81563 14.7656L18.9563 15.6094ZM7.875 15.4125V21.3469L11.2219 17.1562L8.49375 16.9031L7.875 15.4125ZM20.8125 21.375C21.3 21.375 21.7031 21.2108 22.0219 20.8822C22.3406 20.5545 22.5 20.1562 22.5 19.6875C22.5 19.2 22.3406 18.7969 22.0219 18.4781C21.7031 18.1594 21.3 18 20.8125 18C20.3438 18 19.9455 18.1594 19.6178 18.4781C19.2892 18.7969 19.125 19.2 19.125 19.6875C19.125 20.1562 19.2892 20.5545 19.6178 20.8822C19.9455 21.2108 20.3438 21.375 20.8125 21.375ZM18.9563 15.6094L9.81563 14.7656L18.9563 15.6094Z"
-              fill="#000000" />
+              fill="currentColor" />
           </svg>
         </a>
-        <a href="#" class="text-[18px] font-medium leading-[26px] text-[#000000]">
+        <a href="cart.htm" class="group-hover:text-[#FFF] text-[18px] font-medium leading-[26px] text-[#000000]">
           Cart
         </a>
       </div>
-      <button class="pt-[15px] pl-[21px] pb-[15px] pr-[22px] w-full bg-[white] rounded-[20px]">
-        <a href="#" class="font-semibold text-lg leading-[26px] text-[#000000]">Get started</a>
+      <button class="pt-[15px] group pl-[21px] hover:bg-[#1E2832] pb-[15px] pr-[22px] w-full bg-[white] rounded-[20px]">
+        <a href="#" class="font-semibold text-lg leading-[26px] group-hover:text-[#FFF] text-[#000000]">Get started</a>
       </button>
     </div>
+
   </header>
 
-  <section class="pt-[36px] pb-[25px]">
+  <section id="hero" class="pt-[36px] pb-[25px]">
     <div class="max-w-[1180px] mx-auto px-5">
       <div class="  items-start justify-between ">
         <div class="md:flex items-start  justify-between mb-[25px]">
 
-          <button id="X" class="hover:cursor-pointer z-50 fixed md:absolute md:hidden top-[80px] rounded-sm left-[0px] bg-[white] border-2 p-3 ">X</button>
-          <div id="eccomerce" class=" max-w-[295px] md:relative fixed md:bg-[#FFFFFF] bg-[white]  border-2 pt-5 h-full transition-all md:left-0 -left-full z-50 top-0  w-[80%]" style="overflow-y: auto;">
+          <button id="X"
+            class="hover:cursor-pointer z-50 fixed md:absolute md:hidden top-[80px] rounded-sm left-[0px] bg-[white] border-2 p-3 ">X</button>
+          <div id="eccomerce"
+            class=" max-w-[305px] px-[5px] md:relative fixed md:bg-[#FFFFFF] bg-[white]  border-2 pt-5 h-full transition-all md:left-0 -left-full z-50 top-0  w-[80%]"
+            style="overflow-y: auto;">
             <div class="max-w-[234px] mx-auto w-full flex items-center justify-between mb-5">
               <p class="font-semibold text-[22px] leading-[22.96px] text-[#807D7E]">
                 Filter
@@ -152,13 +167,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer text-[#8A8989] pb-[5px] mb-[5px] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer text-[#8A8989] pb-[5px] mb-[5px] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer text-[#8A8989] pb-[5px] mb-[5px] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -174,13 +189,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -196,13 +211,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -218,13 +233,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -240,13 +255,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -262,13 +277,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -284,13 +299,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -306,13 +321,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -328,13 +343,13 @@
                   </div>
                   <ul id="flexx" class="hidden">
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Women's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Men's</li>
                     <li
-                      class="cursor-pointer text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
+                      class="cursor-pointer pb-[5px] mb-[5px] text-[#8A8989] font-sans font-semibold text-base leading-5 hover:opacity-70 border-b text-center">
                       Children</li>
                   </ul>
                 </div>
@@ -353,7 +368,7 @@
               </div>
 
               <div id="inp" class="wrapper">
-      
+
                 <div class="slider">
                   <div class="progress"></div>
                 </div>
@@ -372,10 +387,10 @@
                   </div>
                 </div>
               </div>
-          
+
               <hr class="text-[#BEBCBD] w-full">
 
-              <div class=" max-w-[295px] w-full pt-5 ">
+              <div id="btn-1s" class=" max-w-[295px] w-full pt-5 ">
                 <div class="flex items-center justify-between max-w-[234px] mx-auto pb-5">
                   <p class="font-semibold text-[22px] leading-[29.96px] text-[#3C4242]">Colors</p>
                   <button id="btn-1" class=" hover:cursor-pointer transition-all rotate-90 text-[#8A8989] ">
@@ -398,67 +413,78 @@
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col p-1 gap-4 w-full justify-center items-center">
-                      <span data-color="black" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-black"></span>
+                      <span data-color="black" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-black"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Black</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#F35528" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#F35528]"></span>
+                      <span data-color="#F35528" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#F35528]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Red</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#F16F2B" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#F16F2B]"></span>
+                      <span data-color="#F16F2B" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#F16F2B]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Orange</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class="flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#345EFF" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#345EFF]"></span>
+                      <span data-color="#345EFF" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#345EFF]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Navy</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="grey" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-white "></span>
+                      <span data-color="grey" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-white "></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">White</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#D67E3B" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#D67E3B]"></span>
+                      <span data-color="#D67E3B" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#D67E3B]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Broom</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#48BC4E" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#48BC4E]"></span>
+                      <span data-color="#48BC4E" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#48BC4E]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Green</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#FDC761" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#FDC761]"></span>
+                      <span data-color="#FDC761" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#FDC761]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Yellow</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#E4E5E8" id="color" class="  color-span w-9 h-9 border-2 rounded-xl bg-[#E4E5E8]"></span>
+                      <span data-color="#E4E5E8" id="color"
+                        class="  color-span w-9 h-9 border-2 rounded-xl bg-[#E4E5E8]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Grey</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#E08D9D" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#E08D9D]"></span>
+                      <span data-color="#E08D9D" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#E08D9D]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Pink</p>
                     </button>
                   </li>
                   <li class="flex justify-center">
                     <button class=" flex flex-col gap-4 w-full justify-center items-center">
-                      <span data-color="#3FDEFF" id="color" class=" color-span w-9 h-9 border-2 rounded-xl bg-[#3FDEFF]"></span>
+                      <span data-color="#3FDEFF" id="color"
+                        class=" color-span w-9 h-9 border-2 rounded-xl bg-[#3FDEFF]"></span>
                       <p class="text-[#8A8989] font-sans font-semibold text-sm leading-5">Blue</p>
                     </button>
                   </li>
@@ -467,7 +493,7 @@
 
               <hr class="text-[#BEBCBD] ">
 
-              <div class="w-full mx-auto">
+              <div id="btn-2s" class="w-full mx-auto">
                 <div id="" class="flex items-center justify-between max-w-[234px] w-full mx-auto py-5 cursor-pointer">
                   <h3 class="text-[#807D7E] font-sans font-semibold text-2xl leading-7">Size</h3>
                   <button id="btn-2" class="text-[#8A8989] rotate-90 transition-all">
@@ -513,8 +539,9 @@
 
               <hr class="text-[#BEBCBD] ">
 
-              <div class="">
-                <div id="" class="flex items-center justify-between max-w-[234px] w-full mx-auto pt-5 pb-5 cursor-pointer">
+              <div id="btn-3s" class="">
+                <div id=""
+                  class="flex items-center justify-between max-w-[234px] w-full mx-auto pt-5 pb-5 cursor-pointer">
                   <h3 class="text-[#807D7E] font-sans font-semibold text-2xl leading-7">Dress Style</h3>
                   <button id="btn-3" class="text-[#8A8989] button_rotate transition-all">
                     <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -524,9 +551,9 @@
                   </button>
                 </div>
 
-              <hr id="hr" class="text-[#BEBCBD] hidden mb-[40px]">
+                <hr id="hr" class="text-[#BEBCBD] hidden mb-[40px]">
 
-                <div  class="">
+                <div class="">
                   <div id="style1" class="hidden max-w-[234px] w-full mx-auto pb-10">
                     <ul class="grid grid-cols-2 gap-[20px]">
                       <li id="dresStyle"
@@ -590,17 +617,17 @@
                       </svg>
 
                     </p>
-                    <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                    <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                           fill="white" />
                       </svg>
-                      <a href="korzinka.htm" class="">
-                        shop now
-                      </a>
-                    </p>
+                      shop now
+                    </a>
                   </div>
+                  <span
+                    class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
                 </div>
                 <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike
                   Sportswear
@@ -638,17 +665,17 @@
                       </svg>
 
                     </p>
-                    <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                    <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                           fill="white" />
                       </svg>
-                      <a href="korzinka.htm" class="">
-                        shop now
-                      </a>
-                    </p>
+                      shop now
+                    </a>
                   </div>
+                  <span
+                    class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
                 </div>
                 <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike
                   Sportswear
@@ -686,17 +713,17 @@
                       </svg>
 
                     </p>
-                    <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                    <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                           fill="white" />
                       </svg>
-                      <a href="korzinka.htm" class="">
-                        shop now
-                      </a>
-                    </p>
+                      shop now
+                    </a>
                   </div>
+                  <span
+                    class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
                 </div>
                 <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike
                   Sportswear
@@ -734,17 +761,17 @@
                       </svg>
 
                     </p>
-                    <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                    <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                           fill="white" />
                       </svg>
-                      <a href="korzinka.htm" class="">
-                        shop now
-                      </a>
-                    </p>
+                      shop now
+                    </a>
                   </div>
+                  <span
+                    class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
                 </div>
                 <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike
                   Sportswear
@@ -782,17 +809,17 @@
                       </svg>
 
                     </p>
-                    <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                    <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                           fill="white" />
                       </svg>
-                      <a href="korzinka.htm" class="">
-                        shop now
-                      </a>
-                    </p>
+                      shop now
+                    </a>
                   </div>
+                  <span
+                    class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
                 </div>
                 <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike
                   Sportswear
@@ -830,17 +857,17 @@
                       </svg>
 
                     </p>
-                    <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                    <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                           fill="white" />
                       </svg>
-                      <a href="korzinka.htm" class="">
-                        shop now
-                      </a>
-                    </p>
+                      shop now
+                    </a>
                   </div>
+                  <span
+                    class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
                 </div>
                 <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike
                   Sportswear
@@ -859,7 +886,7 @@
         <ul class="grid md:grid-cols-3 grid-cols-2 gap-5">
           <li class="max-w-[367px] md:border-none border md:p-0 p-2 rounded-xl md:rounded-none list-none">
             <div class="relative group overflow-hidden">
-              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class=" mb-[18px]">
+              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class="  mb-[18px]">
               <div
                 class=" w-full absolute transition-all transition-3s md:group-hover:bottom-[18px] hidden md:group-hover:flex bottom-[-80px] md:flex items-center justify-between bg-[#1E2832] pt-[15px] pl-[14px] pb-[15px] pr-[22px]">
                 <p class="flex items-center gap-[21px]">
@@ -883,21 +910,20 @@
                   </svg>
 
                 </p>
-                <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                       fill="white" />
                   </svg>
-                  <a href="korzinka.htm" class="">
-                    shop now
-                  </a>
-                </p>
+                  shop now
+                </a>
               </div>
+              <span
+                class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
             </div>
             <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike Sportswear
-              Futura Luxe
-            </p>
+              Futura Luxe</p>
             <div class="flex items-center justify-between">
               <p class="font-normal  md:text-base text-xs leading-[21px]  text-[#00000080]">Bag</p>
               <p class="font-semibold md:text-base text-xs leading-[21px]  text-[#000000]">$130.00</p>
@@ -907,7 +933,7 @@
           </li>
           <li class="max-w-[367px] md:border-none border md:p-0 p-2 rounded-xl md:rounded-none list-none">
             <div class="relative group overflow-hidden">
-              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class=" mb-[18px]">
+              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class="  mb-[18px]">
               <div
                 class=" w-full absolute transition-all transition-3s md:group-hover:bottom-[18px] hidden md:group-hover:flex bottom-[-80px] md:flex items-center justify-between bg-[#1E2832] pt-[15px] pl-[14px] pb-[15px] pr-[22px]">
                 <p class="flex items-center gap-[21px]">
@@ -931,21 +957,20 @@
                   </svg>
 
                 </p>
-                <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                       fill="white" />
                   </svg>
-                  <a href="korzinka.htm" class="">
-                    shop now
-                  </a>
-                </p>
+                  shop now
+                </a>
               </div>
+              <span
+                class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
             </div>
             <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike Sportswear
-              Futura Luxe
-            </p>
+              Futura Luxe</p>
             <div class="flex items-center justify-between">
               <p class="font-normal  md:text-base text-xs leading-[21px]  text-[#00000080]">Bag</p>
               <p class="font-semibold md:text-base text-xs leading-[21px]  text-[#000000]">$130.00</p>
@@ -955,7 +980,7 @@
           </li>
           <li class="max-w-[367px] md:border-none border md:p-0 p-2 rounded-xl md:rounded-none list-none">
             <div class="relative group overflow-hidden">
-              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class=" mb-[18px]">
+              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class="  mb-[18px]">
               <div
                 class=" w-full absolute transition-all transition-3s md:group-hover:bottom-[18px] hidden md:group-hover:flex bottom-[-80px] md:flex items-center justify-between bg-[#1E2832] pt-[15px] pl-[14px] pb-[15px] pr-[22px]">
                 <p class="flex items-center gap-[21px]">
@@ -979,21 +1004,20 @@
                   </svg>
 
                 </p>
-                <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                       fill="white" />
                   </svg>
-                  <a href="korzinka.htm" class="">
-                    shop now
-                  </a>
-                </p>
+                  shop now
+                </a>
               </div>
+              <span
+                class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
             </div>
             <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike Sportswear
-              Futura Luxe
-            </p>
+              Futura Luxe</p>
             <div class="flex items-center justify-between">
               <p class="font-normal  md:text-base text-xs leading-[21px]  text-[#00000080]">Bag</p>
               <p class="font-semibold md:text-base text-xs leading-[21px]  text-[#000000]">$130.00</p>
@@ -1003,7 +1027,7 @@
           </li>
           <li class="max-w-[367px] md:border-none border md:p-0 p-2 rounded-xl md:rounded-none list-none">
             <div class="relative group overflow-hidden">
-              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class=" mb-[18px]">
+              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class="  mb-[18px]">
               <div
                 class=" w-full absolute transition-all transition-3s md:group-hover:bottom-[18px] hidden md:group-hover:flex bottom-[-80px] md:flex items-center justify-between bg-[#1E2832] pt-[15px] pl-[14px] pb-[15px] pr-[22px]">
                 <p class="flex items-center gap-[21px]">
@@ -1027,21 +1051,20 @@
                   </svg>
 
                 </p>
-                <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                       fill="white" />
                   </svg>
-                  <a href="korzinka.htm" class="">
-                    shop now
-                  </a>
-                </p>
+                  shop now
+                </a>
               </div>
+              <span
+                class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
             </div>
             <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike Sportswear
-              Futura Luxe
-            </p>
+              Futura Luxe</p>
             <div class="flex items-center justify-between">
               <p class="font-normal  md:text-base text-xs leading-[21px]  text-[#00000080]">Bag</p>
               <p class="font-semibold md:text-base text-xs leading-[21px]  text-[#000000]">$130.00</p>
@@ -1051,7 +1074,7 @@
           </li>
           <li class="max-w-[367px] md:border-none border md:p-0 p-2 rounded-xl md:rounded-none list-none">
             <div class="relative group overflow-hidden">
-              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class=" mb-[18px]">
+              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class="  mb-[18px]">
               <div
                 class=" w-full absolute transition-all transition-3s md:group-hover:bottom-[18px] hidden md:group-hover:flex bottom-[-80px] md:flex items-center justify-between bg-[#1E2832] pt-[15px] pl-[14px] pb-[15px] pr-[22px]">
                 <p class="flex items-center gap-[21px]">
@@ -1075,21 +1098,20 @@
                   </svg>
 
                 </p>
-                <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                       fill="white" />
                   </svg>
-                  <a href="korzinka.htm" class="">
-                    shop now
-                  </a>
-                </p>
+                  shop now
+                </a>
               </div>
+              <span
+                class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
             </div>
             <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike Sportswear
-              Futura Luxe
-            </p>
+              Futura Luxe</p>
             <div class="flex items-center justify-between">
               <p class="font-normal  md:text-base text-xs leading-[21px]  text-[#00000080]">Bag</p>
               <p class="font-semibold md:text-base text-xs leading-[21px]  text-[#000000]">$130.00</p>
@@ -1099,7 +1121,7 @@
           </li>
           <li class="max-w-[367px] md:border-none border md:p-0 p-2 rounded-xl md:rounded-none list-none">
             <div class="relative group overflow-hidden">
-              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class=" mb-[18px]">
+              <img src="img/subscribe/subscribe-1.png" alt="rasm bor" class="  mb-[18px]">
               <div
                 class=" w-full absolute transition-all transition-3s md:group-hover:bottom-[18px] hidden md:group-hover:flex bottom-[-80px] md:flex items-center justify-between bg-[#1E2832] pt-[15px] pl-[14px] pb-[15px] pr-[22px]">
                 <p class="flex items-center gap-[21px]">
@@ -1123,21 +1145,20 @@
                   </svg>
 
                 </p>
-                <p class="flex items-center gap-[8px] text-[#FFFFFF]">
+                <a href="korzinka.htm" class="flex items-center gap-[8px] text-[#FFFFFF]">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.75 8.25C9.75 5.39062 12.0938 3 15 3C17.8594 3 20.25 5.39062 20.25 8.25V10.5H23.25C24.4688 10.5 25.5 11.5312 25.5 12.75V22.5C25.5 24.9844 23.4844 27 21 27H9C6.46875 27 4.5 24.9844 4.5 22.5V12.75C4.5 11.5312 5.48438 10.5 6.75 10.5H9.75V8.25ZM12 10.5H18V8.25C18 6.60938 16.6406 5.25 15 5.25C13.3125 5.25 12 6.60938 12 8.25V10.5ZM10.875 15C11.4844 15 12 14.5312 12 13.875C12 13.2656 11.4844 12.75 10.875 12.75C10.2188 12.75 9.75 13.2656 9.75 13.875C9.75 14.5312 10.2188 15 10.875 15ZM19.125 12.75C18.4688 12.75 18 13.2656 18 13.875C18 14.5312 18.4688 15 19.125 15C19.7344 15 20.25 14.5312 20.25 13.875C20.25 13.2656 19.7344 12.75 19.125 12.75Z"
                       fill="white" />
                   </svg>
-                  <a href="korzinka.htm" class="">
-                    shop now
-                  </a>
-                </p>
+                  shop now
+                </a>
               </div>
+              <span
+                class="font-semibold text-xs leading-[16.34px] text-[#FFFFFF] text-center absolute top-[26px] bg-[#FF6F61] px-[13.85px] py-[4px]">HOT</span>
             </div>
             <p class="font-semibold md:text-base text-sm leading-[21px]  text-[#000000] md:mb-4 mb-2">Nike Sportswear
-              Futura Luxe
-            </p>
+              Futura Luxe</p>
             <div class="flex items-center justify-between">
               <p class="font-normal  md:text-base text-xs leading-[21px]  text-[#00000080]">Bag</p>
               <p class="font-semibold md:text-base text-xs leading-[21px]  text-[#000000]">$130.00</p>
@@ -1161,35 +1182,37 @@
             elit, sed do eiusmod tempor incididunt ut labore et <br>
             dolore magna aliqua
           </p>
-          <div class=" flex items-center md:justify-start justify-center md:mb-0 gap-9">
+          <div class="flex items-center md:justify-start justify-center md:mb-0 mb-[20px] gap-9">
+            <a href="#">
+              <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.1484 14.25H14.2188V23H10.3125V14.25H7.10938V10.6562H10.3125V7.88281C10.3125 4.75781 12.1875 3 15.0391 3C16.4062 3 17.8516 3.27344 17.8516 3.27344V6.35938H16.25C14.6875 6.35938 14.2188 7.29688 14.2188 8.3125V10.6562H17.6953L17.1484 14.25Z"
+                  fill="#1E2832" />
+              </svg>
+            </a>
 
-            <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M17.1484 14.25H14.2188V23H10.3125V14.25H7.10938V10.6562H10.3125V7.88281C10.3125 4.75781 12.1875 3 15.0391 3C16.4062 3 17.8516 3.27344 17.8516 3.27344V6.35938H16.25C14.6875 6.35938 14.2188 7.29688 14.2188 8.3125V10.6562H17.6953L17.1484 14.25Z"
-                fill="#1E2832" />
-            </svg>
+            <a href="#">
+              <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.4297 8.9375C20.4297 9.13281 20.4297 9.28906 20.4297 9.48438C20.4297 14.9141 16.3281 21.125 8.78906 21.125C6.44531 21.125 4.29688 20.4609 2.5 19.2891C2.8125 19.3281 3.125 19.3672 3.47656 19.3672C5.39062 19.3672 7.14844 18.7031 8.55469 17.6094C6.75781 17.5703 5.23438 16.3984 4.72656 14.7578C5 14.7969 5.23438 14.8359 5.50781 14.8359C5.85938 14.8359 6.25 14.7578 6.5625 14.6797C4.6875 14.2891 3.28125 12.6484 3.28125 10.6562V10.6172C3.82812 10.9297 4.49219 11.0859 5.15625 11.125C4.02344 10.3828 3.32031 9.13281 3.32031 7.72656C3.32031 6.94531 3.51562 6.24219 3.86719 5.65625C5.89844 8.11719 8.94531 9.75781 12.3438 9.95312C12.2656 9.64062 12.2266 9.32812 12.2266 9.01562C12.2266 6.75 14.0625 4.91406 16.3281 4.91406C17.5 4.91406 18.5547 5.38281 19.3359 6.20312C20.2344 6.00781 21.1328 5.65625 21.9141 5.1875C21.6016 6.16406 20.9766 6.94531 20.1172 7.45312C20.9375 7.375 21.7578 7.14062 22.4609 6.82812C21.9141 7.64844 21.2109 8.35156 20.4297 8.9375Z"
+                  fill="#1E2832" />
+              </svg>
+            </a>
+            <a href="#">
+              <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.65625 20.5H4.02344V8.82031H7.65625V20.5ZM5.82031 7.25781C4.6875 7.25781 3.75 6.28125 3.75 5.10938C3.75 3.50781 5.46875 2.49219 6.875 3.3125C7.53906 3.66406 7.92969 4.36719 7.92969 5.10938C7.92969 6.28125 6.99219 7.25781 5.82031 7.25781ZM21.2109 20.5H17.6172V14.8359C17.6172 13.4688 17.5781 11.75 15.7031 11.75C13.8281 11.75 13.5547 13.1953 13.5547 14.7188V20.5H9.92188V8.82031H13.3984V10.4219H13.4375C13.9453 9.52344 15.1172 8.54688 16.875 8.54688C20.5469 8.54688 21.25 10.9688 21.25 14.0938V20.5H21.2109Z"
+                  fill="#1E2832" />
+              </svg>
+            </a>
 
-
-            <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M20.4297 8.9375C20.4297 9.13281 20.4297 9.28906 20.4297 9.48438C20.4297 14.9141 16.3281 21.125 8.78906 21.125C6.44531 21.125 4.29688 20.4609 2.5 19.2891C2.8125 19.3281 3.125 19.3672 3.47656 19.3672C5.39062 19.3672 7.14844 18.7031 8.55469 17.6094C6.75781 17.5703 5.23438 16.3984 4.72656 14.7578C5 14.7969 5.23438 14.8359 5.50781 14.8359C5.85938 14.8359 6.25 14.7578 6.5625 14.6797C4.6875 14.2891 3.28125 12.6484 3.28125 10.6562V10.6172C3.82812 10.9297 4.49219 11.0859 5.15625 11.125C4.02344 10.3828 3.32031 9.13281 3.32031 7.72656C3.32031 6.94531 3.51562 6.24219 3.86719 5.65625C5.89844 8.11719 8.94531 9.75781 12.3438 9.95312C12.2656 9.64062 12.2266 9.32812 12.2266 9.01562C12.2266 6.75 14.0625 4.91406 16.3281 4.91406C17.5 4.91406 18.5547 5.38281 19.3359 6.20312C20.2344 6.00781 21.1328 5.65625 21.9141 5.1875C21.6016 6.16406 20.9766 6.94531 20.1172 7.45312C20.9375 7.375 21.7578 7.14062 22.4609 6.82812C21.9141 7.64844 21.2109 8.35156 20.4297 8.9375Z"
-                fill="#1E2832" />
-            </svg>
-
-
-            <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M7.65625 20.5H4.02344V8.82031H7.65625V20.5ZM5.82031 7.25781C4.6875 7.25781 3.75 6.28125 3.75 5.10938C3.75 3.50781 5.46875 2.49219 6.875 3.3125C7.53906 3.66406 7.92969 4.36719 7.92969 5.10938C7.92969 6.28125 6.99219 7.25781 5.82031 7.25781ZM21.2109 20.5H17.6172V14.8359C17.6172 13.4688 17.5781 11.75 15.7031 11.75C13.8281 11.75 13.5547 13.1953 13.5547 14.7188V20.5H9.92188V8.82031H13.3984V10.4219H13.4375C13.9453 9.52344 15.1172 8.54688 16.875 8.54688C20.5469 8.54688 21.25 10.9688 21.25 14.0938V20.5H21.2109Z"
-                fill="#1E2832" />
-            </svg>
-
-
-            <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12.5 8.50781C14.9609 8.50781 16.9922 10.5391 16.9922 13C16.9922 15.5 14.9609 17.4922 12.5 17.4922C10 17.4922 8.00781 15.5 8.00781 13C8.00781 10.5391 10 8.50781 12.5 8.50781ZM12.5 15.9297C14.1016 15.9297 15.3906 14.6406 15.3906 13C15.3906 11.3984 14.1016 10.1094 12.5 10.1094C10.8594 10.1094 9.57031 11.3984 9.57031 13C9.57031 14.6406 10.8984 15.9297 12.5 15.9297ZM18.2031 8.35156C18.2031 7.76562 17.7344 7.29688 17.1484 7.29688C16.5625 7.29688 16.0938 7.76562 16.0938 8.35156C16.0938 8.9375 16.5625 9.40625 17.1484 9.40625C17.7344 9.40625 18.2031 8.9375 18.2031 8.35156ZM21.1719 9.40625C21.25 10.8516 21.25 15.1875 21.1719 16.6328C21.0938 18.0391 20.7812 19.25 19.7656 20.3047C18.75 21.3203 17.5 21.6328 16.0938 21.7109C14.6484 21.7891 10.3125 21.7891 8.86719 21.7109C7.46094 21.6328 6.25 21.3203 5.19531 20.3047C4.17969 19.25 3.86719 18.0391 3.78906 16.6328C3.71094 15.1875 3.71094 10.8516 3.78906 9.40625C3.86719 8 4.17969 6.75 5.19531 5.73438C6.25 4.71875 7.46094 4.40625 8.86719 4.32812C10.3125 4.25 14.6484 4.25 16.0938 4.32812C17.5 4.40625 18.75 4.71875 19.7656 5.73438C20.7812 6.75 21.0938 8 21.1719 9.40625ZM19.2969 18.1562C19.7656 17.0234 19.6484 14.2891 19.6484 13C19.6484 11.75 19.7656 9.01562 19.2969 7.84375C18.9844 7.10156 18.3984 6.47656 17.6562 6.20312C16.4844 5.73438 13.75 5.85156 12.5 5.85156C11.2109 5.85156 8.47656 5.73438 7.34375 6.20312C6.5625 6.51562 5.97656 7.10156 5.66406 7.84375C5.19531 9.01562 5.3125 11.75 5.3125 13C5.3125 14.2891 5.19531 17.0234 5.66406 18.1562C5.97656 18.9375 6.5625 19.5234 7.34375 19.8359C8.47656 20.3047 11.2109 20.1875 12.5 20.1875C13.75 20.1875 16.4844 20.3047 17.6562 19.8359C18.3984 19.5234 19.0234 18.9375 19.2969 18.1562Z"
-                fill="#1E2832" />
-            </svg>
-
+            <a href="#">
+              <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.5 8.50781C14.9609 8.50781 16.9922 10.5391 16.9922 13C16.9922 15.5 14.9609 17.4922 12.5 17.4922C10 17.4922 8.00781 15.5 8.00781 13C8.00781 10.5391 10 8.50781 12.5 8.50781ZM12.5 15.9297C14.1016 15.9297 15.3906 14.6406 15.3906 13C15.3906 11.3984 14.1016 10.1094 12.5 10.1094C10.8594 10.1094 9.57031 11.3984 9.57031 13C9.57031 14.6406 10.8984 15.9297 12.5 15.9297ZM18.2031 8.35156C18.2031 7.76562 17.7344 7.29688 17.1484 7.29688C16.5625 7.29688 16.0938 7.76562 16.0938 8.35156C16.0938 8.9375 16.5625 9.40625 17.1484 9.40625C17.7344 9.40625 18.2031 8.9375 18.2031 8.35156ZM21.1719 9.40625C21.25 10.8516 21.25 15.1875 21.1719 16.6328C21.0938 18.0391 20.7812 19.25 19.7656 20.3047C18.75 21.3203 17.5 21.6328 16.0938 21.7109C14.6484 21.7891 10.3125 21.7891 8.86719 21.7109C7.46094 21.6328 6.25 21.3203 5.19531 20.3047C4.17969 19.25 3.86719 18.0391 3.78906 16.6328C3.71094 15.1875 3.71094 10.8516 3.78906 9.40625C3.86719 8 4.17969 6.75 5.19531 5.73438C6.25 4.71875 7.46094 4.40625 8.86719 4.32812C10.3125 4.25 14.6484 4.25 16.0938 4.32812C17.5 4.40625 18.75 4.71875 19.7656 5.73438C20.7812 6.75 21.0938 8 21.1719 9.40625ZM19.2969 18.1562C19.7656 17.0234 19.6484 14.2891 19.6484 13C19.6484 11.75 19.7656 9.01562 19.2969 7.84375C18.9844 7.10156 18.3984 6.47656 17.6562 6.20312C16.4844 5.73438 13.75 5.85156 12.5 5.85156C11.2109 5.85156 8.47656 5.73438 7.34375 6.20312C6.5625 6.51562 5.97656 7.10156 5.66406 7.84375C5.19531 9.01562 5.3125 11.75 5.3125 13C5.3125 14.2891 5.19531 17.0234 5.66406 18.1562C5.97656 18.9375 6.5625 19.5234 7.34375 19.8359C8.47656 20.3047 11.2109 20.1875 12.5 20.1875C13.75 20.1875 16.4844 20.3047 17.6562 19.8359C18.3984 19.5234 19.0234 18.9375 19.2969 18.1562Z"
+                  fill="#1E2832" />
+              </svg>
+            </a>
           </div>
         </div>
         <div class="">
@@ -1234,12 +1257,24 @@
       <div class="lg:flex text-center items-center gap-[135px] py-[14px] px-5 max-w-[1180px] mx-auto  w-full  ">
         <p class="font-normal text-base leading-[21.79px] text-[#FFFFFF] lg:mb-0 mb-[30px]">© 2022 Coral , Inc.</p>
         <div class=" grid grid-cols-6 justify-center  gap-[8px] lg:mb-0 mb-[20px]">
-          <img src="./img/footer/1.png" alt="">
-          <img src="./img/footer/2.png" alt="">
-          <img src="./img/footer/3.png" alt="">
-          <img src="./img/footer/4.png" alt="">
-          <img src="./img/footer/5.png" alt="">
-          <img src="./img/footer/6.png" alt="">
+          <a href="#">
+            <img src="./img/footer/1.png" alt="">
+          </a>
+          <a href="#">
+            <img src="./img/footer/2.png" alt="">
+          </a>
+          <a href="#">
+            <img src="./img/footer/3.png" alt="">
+          </a>
+          <a href="#">
+            <img src="./img/footer/4.png" alt="">
+          </a>
+          <a href="#">
+            <img src="./img/footer/5.png" alt="">
+          </a>
+          <a href="#">
+            <img src="./img/footer/6.png" alt="">
+          </a>
         </div>
         <a href="#"
           class="font-normal text-base leading-[21.79px] text-[#FFFFFF] flex justify-center items-center gap-[4px]">Scroll

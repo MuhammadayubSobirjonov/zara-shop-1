@@ -1,15 +1,33 @@
 let resMenu = document.querySelector('#responsive-menu')
 let hamMenu = document.querySelector('#hamburger-menu')
 let closeMenu = document.querySelector('#close-menu')
-
+let bg = document.querySelector("#bg")
+let body  = document.querySelector("body")
 hamMenu.addEventListener('click', function () {
   resMenu.classList.add("right-0")
   resMenu.classList.remove("-right-full")
+  body.classList.add("overflow-hidden")
+  bg.classList.add("right-0")
+})
+
+bg.addEventListener('click' , function(){
+  resMenu.classList.add("-right-full")
+  resMenu.classList.remove("right-0")
+  bg.classList.remove("right-0")
+  // bg.classList.add("right-0")
 })
 
 closeMenu.addEventListener('click', function () {
   resMenu.classList.add("-right-full")
   resMenu.classList.remove("right-0")
+  body.classList.remove("overflow-hidden")
+})
+
+let hInput = document.querySelector("#headerInput")
+let hSearch = document.querySelector("#headerSearch")
+
+hSearch.addEventListener('click' , function(){
+  hInput.classList.toggle("hidden")
 })
 
 let eccommerce = document.querySelector('#eccomerce')
@@ -43,22 +61,25 @@ openR.addEventListener('click', function () {
 
 let colors = document.querySelector("#colors")
 let btn1 = document.querySelector("#btn-1")
-btn1.addEventListener('click', function () {
+let btn1s = document.querySelector("#btn-1s")
+btn1s.addEventListener('click', function () {
   colors.classList.toggle("hidden")
   btn1.classList.toggle("rotate-90")
 })
 
 let size = document.querySelector("#size")
 let btn2 = document.querySelector("#btn-2")
-btn2.addEventListener('click', function () {
+let btn2s = document.querySelector("#btn-2s")
+btn2s.addEventListener('click', function () {
   size.classList.toggle("hidden")
   btn2.classList.toggle("rotate-[-50%]")
 })
 
 let style1 = document.querySelector("#style1")
 let btn3 = document.querySelector("#btn-3")
+let btn3s = document.querySelector("#btn-3s")
 let hr = document.querySelector("#hr")
-btn3.addEventListener('click', function () {
+btn3s.addEventListener('click', function () {
   style1.classList.toggle("block")
   style1.classList.toggle("hidden")
   btn3.classList.toggle("rotate-90")
