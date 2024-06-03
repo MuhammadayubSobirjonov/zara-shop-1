@@ -139,7 +139,6 @@ productSize.forEach(function (item, index) {
   })
 })
 let dresStyle = document.querySelectorAll("#dresStyle")
-let style2 = document.querySelector("#style1")
 dresStyle.forEach(function (item, index) {
   item.addEventListener('click', function () {
     dresStyle.forEach(function (item, index) {
