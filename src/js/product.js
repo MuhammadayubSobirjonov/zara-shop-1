@@ -130,7 +130,6 @@ rangeInput.forEach(input => {
 
 let productSize = document.querySelectorAll("#productSize")
 
-let dresStyle = document.querySelectorAll("#dresStyle")
 productSize.forEach(function (item, index) {
   item.addEventListener('click', function () {
     productSize.forEach(function (item, index) {
@@ -139,7 +138,8 @@ productSize.forEach(function (item, index) {
     productSize[index].classList.add("product-size")
   })
 })
-
+let dresStyle = document.querySelectorAll("#dresStyle")
+let style2 = document.querySelector("#style1")
 dresStyle.forEach(function (item, index) {
   item.addEventListener('click', function () {
     dresStyle.forEach(function (item, index) {
